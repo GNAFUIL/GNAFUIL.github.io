@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="方法的重载对于功能相似，参数列表不一样的方法，需要记住太多的方法名称，过于繁琐 解决方法：重载方法的重载：多个方法名称一样，但是参数列表不一样好处：只需要记住一个方法名称，就可以实现类似的多个功能 一、方法重载的构造方法方法重载的有关因素1.参数个数不同123456789public static int sum(int a,int b) &amp;#123;    return a+b;&amp;#125;pu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA Overload">
+<meta property="og:url" content="http://example.com/2021/04/20/Overload/index.html">
+<meta property="og:site_name" content="GNAFUIL">
+<meta property="og:description" content="方法的重载对于功能相似，参数列表不一样的方法，需要记住太多的方法名称，过于繁琐 解决方法：重载方法的重载：多个方法名称一样，但是参数列表不一样好处：只需要记住一个方法名称，就可以实现类似的多个功能 一、方法重载的构造方法方法重载的有关因素1.参数个数不同123456789public static int sum(int a,int b) &amp;#123;    return a+b;&amp;#125;pu">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-20T08:03:47.000Z">
+<meta property="article:modified_time" content="2021-04-20T08:50:25.968Z">
+<meta property="article:author" content="GNAFUIL">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>JAVA Overload</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/2021/04/20/Method/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/04/20/Overload/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/04/20/Overload/&text=JAVA Overload"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/04/20/Overload/&is_video=false&description=JAVA Overload"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=JAVA Overload&body=Check out this article: http://example.com/2021/04/20/Overload/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/04/20/Overload/&name=JAVA Overload&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/04/20/Overload/&t=JAVA Overload"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">方法的重载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">一、方法重载的构造方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E6%9C%89%E5%85%B3%E5%9B%A0%E7%B4%A0"><span class="toc-number">1.1.1.</span> <span class="toc-text">方法重载的有关因素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8F%82%E6%95%B0%E4%B8%AA%E6%95%B0%E4%B8%8D%E5%90%8C"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.参数个数不同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E4%B8%8D%E5%90%8C"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">2.参数类型不同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%8F%82%E6%95%B0%E7%9A%84%E5%A4%9A%E7%B1%BB%E5%9E%8B%E9%A1%BA%E5%BA%8F%E4%B8%8D%E5%90%8C"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">3.参数的多类型顺序不同</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E6%97%A0%E5%85%B3%E5%9B%A0%E7%B4%A0"><span class="toc-number">1.1.2.</span> <span class="toc-text">方法重载的无关因素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%8E%E5%8F%82%E6%95%B0%E5%90%8D%E7%A7%B0%E6%97%A0%E5%85%B3"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">1.与参数名称无关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%8E%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B%E6%97%A0%E5%85%B3"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2.与方法的返回值类型无关</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8B%93%E5%B1%95"><span class="toc-number">1.2.</span> <span class="toc-text">二、拓展</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        JAVA Overload
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">GNAFUIL</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-04-20T08:03:47.000Z" itemprop="datePublished">2021-04-20</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h1><p>对于功能相似，参数列表不一样的方法，需要记住太多的方法名称，过于繁琐</p>
+<p>解决方法：<em><strong>重载</strong></em><br>方法的重载：多个方法名称一样，但是参数列表不一样<br>好处：只需要记住一个方法名称，就可以实现类似的多个功能</p>
+<h2 id="一、方法重载的构造方法"><a href="#一、方法重载的构造方法" class="headerlink" title="一、方法重载的构造方法"></a>一、方法重载的构造方法</h2><h3 id="方法重载的有关因素"><a href="#方法重载的有关因素" class="headerlink" title="方法重载的有关因素"></a>方法重载的有关因素</h3><h4 id="1-参数个数不同"><a href="#1-参数个数不同" class="headerlink" title="1.参数个数不同"></a>1.参数个数不同</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static int sum(int a,int b) &#123;</span><br><span class="line">    return a+b;</span><br><span class="line">&#125;</span><br><span class="line">public static int sum(int a,int b,int c) &#123;</span><br><span class="line">    return a+b+c;</span><br><span class="line">&#125;</span><br><span class="line">public static int sum(int a,int b,int c,int d) &#123;</span><br><span class="line">    return a+b+c+d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-参数类型不同"><a href="#2-参数类型不同" class="headerlink" title="2.参数类型不同"></a>2.参数类型不同</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static int sum(double a,double b) &#123;</span><br><span class="line">    return (int) (a+b);</span><br><span class="line">&#125;</span><br><span class="line">public static int sum(int a,int b) &#123;</span><br><span class="line">    return a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-参数的多类型顺序不同"><a href="#3-参数的多类型顺序不同" class="headerlink" title="3.参数的多类型顺序不同"></a>3.参数的多类型顺序不同</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static int sum(int a,double b) &#123;</span><br><span class="line">    return (int) (a+b);</span><br><span class="line">&#125;</span><br><span class="line">public static int sum(double a,int b) &#123;</span><br><span class="line">    return (int) (a+b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法重载的无关因素"><a href="#方法重载的无关因素" class="headerlink" title="方法重载的无关因素"></a>方法重载的无关因素</h3><h4 id="1-与参数名称无关"><a href="#1-与参数名称无关" class="headerlink" title="1.与参数名称无关"></a>1.与参数名称无关</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static int sum(int x,int y) &#123;</span><br><span class="line">    return x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-与方法的返回值类型无关"><a href="#2-与方法的返回值类型无关" class="headerlink" title="2.与方法的返回值类型无关"></a>2.与方法的返回值类型无关</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static double sum(int a,int b) &#123;</span><br><span class="line">    return a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static void open()&#123;&#125;&#x2F;&#x2F;正确重载，但无意义</span><br><span class="line">public static void open(int a)&#123;&#125;&#x2F;&#x2F;正确重载</span><br><span class="line">&#x2F;&#x2F;static void open(int a,int b)&#123;&#125;&#x2F;&#x2F;代码错误，与第十四行冲突</span><br><span class="line">public static void open(double a,int b)&#123;&#125;&#x2F;&#x2F;正确重载</span><br><span class="line">&#x2F;&#x2F;public static void open(int a,double b)&#123;&#125;&#x2F;&#x2F;代码错误，与第十二行冲突</span><br><span class="line">&#x2F;&#x2F;public void open(int i,double d)&#123;&#125;&#x2F;&#x2F;代码错误，与第十一行冲突</span><br><span class="line">public static void OPEN()&#123;&#125;&#x2F;&#x2F;代码正确，但不是有效重载</span><br><span class="line">&#x2F;&#x2F;public static void open(int i,int j)&#123;&#125;&#x2F;&#x2F;代码错误，与第九行冲突</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、拓展"><a href="#二、拓展" class="headerlink" title="二、拓展"></a>二、拓展</h2><p>在调用输出语句的时候，<code>println</code>方法其实就是进行了<em><strong>多种数据类型</strong></em>的<em><strong>重载</strong></em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public static void myPrint(byte num) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(short num) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(int num) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(long num) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(float num) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(double num) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(char zifu) &#123;</span><br><span class="line">    System.out.println(zifu);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(boolean is) &#123;</span><br><span class="line">    System.out.println(is);</span><br><span class="line">&#125;</span><br><span class="line">public static void myPrint(String str) &#123;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">方法的重载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">一、方法重载的构造方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E6%9C%89%E5%85%B3%E5%9B%A0%E7%B4%A0"><span class="toc-number">1.1.1.</span> <span class="toc-text">方法重载的有关因素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8F%82%E6%95%B0%E4%B8%AA%E6%95%B0%E4%B8%8D%E5%90%8C"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.参数个数不同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E4%B8%8D%E5%90%8C"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">2.参数类型不同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%8F%82%E6%95%B0%E7%9A%84%E5%A4%9A%E7%B1%BB%E5%9E%8B%E9%A1%BA%E5%BA%8F%E4%B8%8D%E5%90%8C"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">3.参数的多类型顺序不同</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E6%97%A0%E5%85%B3%E5%9B%A0%E7%B4%A0"><span class="toc-number">1.1.2.</span> <span class="toc-text">方法重载的无关因素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%8E%E5%8F%82%E6%95%B0%E5%90%8D%E7%A7%B0%E6%97%A0%E5%85%B3"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">1.与参数名称无关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%8E%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B%E6%97%A0%E5%85%B3"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2.与方法的返回值类型无关</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8B%93%E5%B1%95"><span class="toc-number">1.2.</span> <span class="toc-text">二、拓展</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/04/20/Overload/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/04/20/Overload/&text=JAVA Overload"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/04/20/Overload/&is_video=false&description=JAVA Overload"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=JAVA Overload&body=Check out this article: http://example.com/2021/04/20/Overload/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/04/20/Overload/&title=JAVA Overload"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/04/20/Overload/&name=JAVA Overload&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/04/20/Overload/&t=JAVA Overload"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    GNAFUIL
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
