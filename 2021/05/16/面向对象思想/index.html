@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="面向对象思想面向对象思想的概述面向过程：当需要实现一个功能的时候，每一步具体的步骤都要亲力亲为，详细的处理每一个细节面向对象：当需要实现一个功能时，不关心具体的步骤，而是找一个已经具有该功能的人，来帮我做这件事 区别：买一个轮胎用与自己造一个轮胎用 实例12345678910111213141516171819int array[]&#x3D;&amp;#123;32,4,234,32,4,543,53,4&amp;#12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象思想">
+<meta property="og:url" content="http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/index.html">
+<meta property="og:site_name" content="GNAFUIL">
+<meta property="og:description" content="面向对象思想面向对象思想的概述面向过程：当需要实现一个功能的时候，每一步具体的步骤都要亲力亲为，详细的处理每一个细节面向对象：当需要实现一个功能时，不关心具体的步骤，而是找一个已经具有该功能的人，来帮我做这件事 区别：买一个轮胎用与自己造一个轮胎用 实例12345678910111213141516171819int array[]&#x3D;&amp;#123;32,4,234,32,4,543,53,4&amp;#12">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-16T05:38:10.000Z">
+<meta property="article:modified_time" content="2021-05-16T05:38:48.740Z">
+<meta property="article:author" content="GNAFUIL">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>面向对象思想</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/2021/05/12/%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&text=面向对象思想"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&is_video=false&description=面向对象思想"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=面向对象思想&body=Check out this article: http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&name=面向对象思想&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&t=面向对象思想"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3"><span class="toc-number">1.</span> <span class="toc-text">面向对象思想</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">面向对象思想的概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AF%AD%E8%A8%80%E7%9A%84%E4%B8%89%E5%A4%A7%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="toc-number">1.3.</span> <span class="toc-text">面向对象语言的三大基本特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B0%81%E8%A3%85"><span class="toc-number">1.3.1.</span> <span class="toc-text">一、封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">封装的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">封装的好处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">封装的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-number">1.3.1.3.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#This%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">This关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">1.3.1.4.1.</span> <span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%A7%E6%89%BF"><span class="toc-number">1.3.2.</span> <span class="toc-text">二、继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E7%89%B9%E7%82%B9"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">继承的概念和特点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.2.1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-1"><span class="toc-number">1.3.2.1.2.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">继承的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="toc-number">1.3.2.2.1.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E7%88%B6%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.2.2.1.1.</span> <span class="toc-text">编写父类代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E5%AD%90%E7%B1%BB%E5%B9%B6%E7%BB%A7%E6%89%BF%E7%88%B6%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.2.2.1.2.</span> <span class="toc-text">编写子类并继承父类代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AD%90%E7%B1%BB%E8%AE%BF%E9%97%AE%E7%88%B6%E7%B1%BB%E6%88%90%E5%91%98%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.2.2.1.3.</span> <span class="toc-text">子类访问父类成员代码</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E6%AE%8A%E7%94%A8%E6%B3%95%EF%BC%9A%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99"><span class="toc-number">1.3.2.2.2.</span> <span class="toc-text">继承的特殊用法：方法的重写</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.3.2.2.2.1.</span> <span class="toc-text">重写实例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A4%9A%E6%80%81"><span class="toc-number">1.3.3.</span> <span class="toc-text">三、多态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">多态的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%80%81%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">使用多态的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%80%81%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">实现多态的必要条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-4"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E4%BD%93%E7%8E%B0"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">多态的体现</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        面向对象思想
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">GNAFUIL</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-05-16T05:38:10.000Z" itemprop="datePublished">2021-05-16</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="面向对象思想"><a href="#面向对象思想" class="headerlink" title="面向对象思想"></a>面向对象思想</h1><h2 id="面向对象思想的概述"><a href="#面向对象思想的概述" class="headerlink" title="面向对象思想的概述"></a>面向对象思想的概述</h2><p>面向过程：当需要实现一个功能的时候，每一步具体的步骤都要亲力亲为，详细的处理每一个细节<br>面向对象：当需要实现一个功能时，不关心具体的步骤，而是找一个已经具有该功能的人，来帮我做这件事</p>
+<p><strong>区别：买一个轮胎用与自己造一个轮胎用</strong></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> array[]=&#123;<span class="number">32</span>,<span class="number">4</span>,<span class="number">234</span>,<span class="number">32</span>,<span class="number">4</span>,<span class="number">543</span>,<span class="number">53</span>,<span class="number">4</span>&#125;;</span><br><span class="line">        <span class="comment">//打印格式为：[32,4,234,32,4,543,53,4]</span></span><br><span class="line">        <span class="comment">//面向过程写法</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">                System.out.print(<span class="string">&quot;[&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i== array.length-<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(array[i] + <span class="string">&quot;]&quot;</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.printf(array[i]+<span class="string">&quot;, &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;===============&quot;</span>);</span><br><span class="line">        <span class="comment">//面向对象的写法</span></span><br><span class="line">        <span class="comment">//使用JDK给我们提供的Arrays类</span></span><br><span class="line">        <span class="comment">//其中的toString方法，直接将数组变成想要格式的字符串</span></span><br><span class="line">        System.out.println(Arrays.toString(array));</span><br></pre></td></tr></table></figure>
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>面型对象思想是一种更符合我们思考习惯的思想，它可以将复杂的事情简单化，并将我们从执行者变成指挥者</p>
+<h2 id="面向对象语言的三大基本特征"><a href="#面向对象语言的三大基本特征" class="headerlink" title="面向对象语言的三大基本特征"></a>面向对象语言的<strong>三大基本特征</strong></h2><ul>
+<li><strong>封装性</strong></li>
+<li><strong>继承性</strong></li>
+<li><strong>多态性</strong></li>
+</ul>
+<h3 id="一、封装"><a href="#一、封装" class="headerlink" title="一、封装"></a>一、封装</h3><ul>
+<li>方法是一种封装</li>
+<li>关键字<code>private</code>也是一种封装</li>
+</ul>
+<h4 id="封装的概念"><a href="#封装的概念" class="headerlink" title="封装的概念"></a>封装的概念</h4><p>封装性是面向对象编程的<strong>核心思想</strong><br>指的就是将描述某种实体的数据和基于这些数的操作集合到一起，形成一个封装体<br>封装的思想保证了类内部数据结构的完整性，<strong>使用户无法轻易直接操作类的内部数据，这样降低了对内部数据的影响，提高了程序的安全性和可维护性</strong></p>
+<h4 id="封装的好处"><a href="#封装的好处" class="headerlink" title="封装的好处"></a>封装的好处</h4><ol>
+<li>只能通过规定方法访问数据</li>
+<li>隐藏类数实现细节</li>
+<li>方便修改实现</li>
+<li>方便加入控制语句　　</li>
+</ol>
+<h4 id="封装的使用"><a href="#封装的使用" class="headerlink" title="封装的使用"></a>封装的使用</h4><ol>
+<li>修改属性的可见性   ——&gt; 设为private</li>
+<li>创建共有的 getter / setter方法 ——&gt; 用于属性的读写</li>
+<li>在getter / setter方法中加入属性控制语句 ——&gt; 对属性值的合法性进行判断</li>
+</ol>
+<h5 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">public</span> String name;        <span class="comment">// 公有的</span></span><br><span class="line">    	<span class="keyword">protected</span> <span class="keyword">int</span> age;        <span class="comment">// 受保护的</span></span><br><span class="line">    	<span class="keyword">char</span> sex;                <span class="comment">// 默认的</span></span><br><span class="line">    	<span class="keyword">private</span> <span class="keyword">int</span> num;        <span class="comment">// 私有的</span></span><br><span class="line">     	<span class="comment">//获取私有成员num值</span></span><br><span class="line">     	<span class="comment">//return</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        	<span class="keyword">return</span> num;</span><br><span class="line">    	&#125;</span><br><span class="line">     	<span class="comment">// 设置私有成员num的值</span></span><br><span class="line">    	<span class="comment">// num</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">       	 <span class="keyword">this</span>.num = num;</span><br><span class="line">    	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="This关键字"><a href="#This关键字" class="headerlink" title="This关键字"></a>This关键字</h4><p>this关键字主要有三个应用：</p>
+<ul>
+<li>this调用本类中的属性，也就是类中的成员变量；</li>
+<li>this调用本类中的其他方法；</li>
+<li>this调用本类中的其他构造方法，调用时要放在构造方法的首行。</li>
+</ul>
+<h5 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">public</span> <span class="keyword">int</span> num;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">Demo2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	<span class="keyword">this</span>(<span class="number">1</span>);                <span class="comment">// this关键字调用类中的其他构造函数</span></span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">Demo2</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        	<span class="keyword">this</span>.fun();                <span class="comment">// this关键字调用类中的其他方法</span></span><br><span class="line">        	System.out.println(a);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	<span class="keyword">this</span>.num = <span class="number">101</span>;            <span class="comment">//使用this关键字给成员属性赋值</span></span><br><span class="line">        	System.out.println(<span class="keyword">this</span>.num);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        	Demo2 demo2 = <span class="keyword">new</span> Demo2();</span><br><span class="line">    	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、继承"><a href="#二、继承" class="headerlink" title="二、继承"></a>二、继承</h3><h4 id="继承的概念和特点"><a href="#继承的概念和特点" class="headerlink" title="继承的概念和特点"></a>继承的概念和特点</h4><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><p>继承是Java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。<br>继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或类从父类继承方法，使得子类具有父类相同的行为。</p>
+<h5 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h5><ul>
+<li>继承鼓励类的重用</li>
+<li>继承可以多层继承</li>
+<li>一个类只能继承一个父类</li>
+<li>父类中private修饰的不能被继承</li>
+<li>构造方法不能被继承</li>
+</ul>
+<h4 id="继承的使用"><a href="#继承的使用" class="headerlink" title="继承的使用"></a>继承的使用</h4><ol>
+<li>编写父类<ul>
+<li>有公共的属性和方法</li>
+</ul>
+</li>
+<li>编写子类并继承父类</li>
+</ol>
+<ul>
+<li>子类继承父类时只能继承一个父类</li>
+<li>继承的关键字   <code>extends</code></li>
+</ul>
+<ol start="3">
+<li>子类访问父类成员<ul>
+<li>访问父类构造方法 <ul>
+<li><code>super();</code>　父类无参的构造方法</li>
+<li><code>super(name);</code>   父类有参的构造方法</li>
+</ul>
+</li>
+<li>访问父类属性<ul>
+<li><code>super.name;</code></li>
+</ul>
+</li>
+<li>访问父类方法<ul>
+<li><code>super.方法名();</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h5><h6 id="编写父类代码"><a href="#编写父类代码" class="headerlink" title="编写父类代码"></a>编写父类代码</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;  </span><br><span class="line">   	<span class="comment">//父类中的成员属性</span></span><br><span class="line">   	<span class="keyword">public</span> String name;    </span><br><span class="line">   	<span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">   	<span class="keyword">public</span> <span class="keyword">char</span> sex;</span><br><span class="line">    	<span class="comment">//父类中的成员方法</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">       	System.out.println(<span class="string">&quot;说话&quot;</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">       	System.out.println(<span class="string">&quot;吃饭&quot;</span>);</span><br><span class="line">   	&#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="编写子类并继承父类代码"><a href="#编写子类并继承父类代码" class="headerlink" title="编写子类并继承父类代码"></a>编写子类并继承父类代码</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//子类只能继承一个父类,关键字 extends</span></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="子类访问父类成员代码"><a href="#子类访问父类成员代码" class="headerlink" title="子类访问父类成员代码"></a>子类访问父类成员代码</h6><p>首先定义一个父类，父类有成员属性，成员发方法，无参构造方法，有参构造方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123; </span><br><span class="line">    	<span class="comment">//父类中的成员属性</span></span><br><span class="line">    	<span class="keyword">public</span> String name;    </span><br><span class="line">    	<span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    	<span class="keyword">public</span> <span class="keyword">char</span> sex;</span><br><span class="line">    	<span class="comment">//父类的构造方法</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;我是无参的构造方法&quot;</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        	<span class="keyword">this</span>.name = name;</span><br><span class="line">        	System.out.println(<span class="string">&quot;我是有参的构造方法,我的名字是：&quot;</span>+<span class="keyword">this</span>.name);</span><br><span class="line">    	&#125;</span><br><span class="line">		<span class="comment">//父类中的成员方法</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;我会说话&quot;</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;我会吃饭&quot;</span>);</span><br><span class="line">    	&#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>访问父类构造方法 </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">	<span class="comment">//访问父类构造方法</span></span><br><span class="line">	<span class="comment">//super();　父类无参的构造方法</span></span><br><span class="line">  　　　<span class="comment">//super(name);   父类有参的构造方法    </span></span><br><span class="line">      	<span class="function"><span class="keyword">public</span> <span class="title">Son</span><span class="params">()</span></span>&#123;</span><br><span class="line">          	<span class="keyword">super</span>(<span class="string">&quot;**&quot;</span>);<span class="comment">//必须注意：访问父类的构造函数只能在子类的构造函数中访问，且必须是子类构造函数的第一行</span></span><br><span class="line">      &#125;</span><br><span class="line">  		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      		Son son = <span class="keyword">new</span> Son();</span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>访问父类属性</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">		<span class="comment">//访问父类属性</span></span><br><span class="line">　　　　　<span class="comment">//super.name;可以在其他方法和构造方法中使用</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">Son</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        	<span class="keyword">super</span>.name = name;</span><br><span class="line">        	System.out.println(<span class="keyword">super</span>.name);</span><br><span class="line">    	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">super</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Son son = <span class="keyword">new</span> Son(<span class="string">&quot;xx&quot;</span>);</span><br><span class="line">        son.fun();        <span class="comment">//调用子类中的fun函数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>访问父类方法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;    	<span class="comment">//访问父类方法    	//super.方法名();可以在其他方法和构造方法中使用    	public Son(String name)&#123;        	super.eat();        //访问父类中的eat方法        	&#125;        public void fun()&#123;        super.say();        //访问父类中的say方法    &#125;    public static void main(String[] args) &#123;        Son son = new Son(&quot;xx&quot;);        son.fun();        //调用子类中的fun函数    &#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="继承的特殊用法：方法的重写"><a href="#继承的特殊用法：方法的重写" class="headerlink" title="继承的特殊用法：方法的重写"></a>继承的特殊用法：方法的<strong>重写</strong></h5><ul>
+<li>在子类中可以根据需要对父类中继承来的方法进行重写；</li>
+<li>重写的方法和被重写的方法必须具有相同方法名称、参数列表和返回类型；</li>
+<li>重写方法不能使用被重写的方法更严格的访问权限</li>
+</ul>
+<h6 id="重写实例"><a href="#重写实例" class="headerlink" title="重写实例"></a>重写实例</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;    	<span class="comment">//父类中的成员方法    	public void say()&#123;        	System.out.println(&quot;我会说话&quot;);    	&#125;    	public void eat()&#123;        System.out.println(&quot;我会吃饭&quot;);    	&#125;    &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在子类重写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;		<span class="comment">//一个跟父类方法一样的方法    	public void say()&#123;        	System.out.println(&quot;我会说英语&quot;);    	&#125;    	public static void main(String[] args) &#123;        	Son son = new Son();        	son.say();    	&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>son.say首先会去父类找say方法，如果子类没有重写say方法，就会输出 “我会说话” ；但是子类里面也有say方法，就会把父类的say方法重写，输出子类中say方法的内容</strong></p>
+<h3 id="三、多态"><a href="#三、多态" class="headerlink" title="三、多态"></a>三、多态</h3><h4 id="多态的概念"><a href="#多态的概念" class="headerlink" title="多态的概念"></a>多态的概念</h4><p>多态指的就是在应用程序中出现的“ 重名 ” 现象。多态性允许以<strong>统一的风格</strong>编写程序，以处理种类繁多的已存在的类及其相关类。这样既降低了维护难度，又节省了时间<br>将<strong>父类对象应用于子类对象</strong>的特征就是面向对象编程中的<strong>多态性</strong>的体现</p>
+<h4 id="使用多态的方法"><a href="#使用多态的方法" class="headerlink" title="使用多态的方法"></a>使用多态的方法</h4><ul>
+<li>编写父类</li>
+<li>编写子类，子类重写父类方法</li>
+<li>运行时，使用父类的类型，子类的对象</li>
+</ul>
+<h4 id="实现多态的必要条件"><a href="#实现多态的必要条件" class="headerlink" title="实现多态的必要条件"></a>实现多态的必要条件</h4><ul>
+<li>继承</li>
+<li>重写</li>
+<li>父类引用指向子类对象 </li>
+</ul>
+<h4 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h4><p>编写父类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;    <span class="comment">//父类中的成员方法    	public void say()&#123;        	System.out.println(&quot;我会说话&quot;);    	&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>编写子类并重写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;		<span class="comment">//一个跟父类方法一样的方法    	public void say()&#123;        	System.out.println(&quot;我会说英语&quot;);    	&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="多态的体现"><a href="#多态的体现" class="headerlink" title="多态的体现"></a>多态的体现</h4><p>在Java语言中，多态性主要表现在以下几个方面：</p>
+<ul>
+<li>方法重写</li>
+<li>抽象类</li>
+<li>接口　</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3"><span class="toc-number">1.</span> <span class="toc-text">面向对象思想</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">面向对象思想的概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AF%AD%E8%A8%80%E7%9A%84%E4%B8%89%E5%A4%A7%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="toc-number">1.3.</span> <span class="toc-text">面向对象语言的三大基本特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B0%81%E8%A3%85"><span class="toc-number">1.3.1.</span> <span class="toc-text">一、封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">封装的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">封装的好处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">封装的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-number">1.3.1.3.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#This%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">This关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">1.3.1.4.1.</span> <span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%A7%E6%89%BF"><span class="toc-number">1.3.2.</span> <span class="toc-text">二、继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E7%89%B9%E7%82%B9"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">继承的概念和特点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.2.1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-1"><span class="toc-number">1.3.2.1.2.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">继承的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="toc-number">1.3.2.2.1.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E7%88%B6%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.2.2.1.1.</span> <span class="toc-text">编写父类代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E5%AD%90%E7%B1%BB%E5%B9%B6%E7%BB%A7%E6%89%BF%E7%88%B6%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.2.2.1.2.</span> <span class="toc-text">编写子类并继承父类代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AD%90%E7%B1%BB%E8%AE%BF%E9%97%AE%E7%88%B6%E7%B1%BB%E6%88%90%E5%91%98%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.2.2.1.3.</span> <span class="toc-text">子类访问父类成员代码</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E6%AE%8A%E7%94%A8%E6%B3%95%EF%BC%9A%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99"><span class="toc-number">1.3.2.2.2.</span> <span class="toc-text">继承的特殊用法：方法的重写</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.3.2.2.2.1.</span> <span class="toc-text">重写实例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A4%9A%E6%80%81"><span class="toc-number">1.3.3.</span> <span class="toc-text">三、多态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">多态的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%80%81%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">使用多态的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%80%81%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">实现多态的必要条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-4"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E4%BD%93%E7%8E%B0"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">多态的体现</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&text=面向对象思想"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&is_video=false&description=面向对象思想"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=面向对象思想&body=Check out this article: http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&title=面向对象思想"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&name=面向对象思想&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/&t=面向对象思想"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    GNAFUIL
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

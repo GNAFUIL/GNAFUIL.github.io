@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="类与对象一、类类：一组相关属性和行为的集合。可看作一类事物的模板，使用事物的属性特征和行为特征来描述该事物。 属性：该事物的状态信息行为：该事物能够做什么 例如：猫咪类：属性：名字、体重、年龄、颜色行为：走、跑、叫、吃饭 二、对象对象：一类事物的具体体现，对象是类的一个实例，必然具备该类事物的属性和行为 例如：一只猫属性：tom、5kg、2 years、yellow行为：优雅的走，放肆的跑、喵喵的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类与对象">
+<meta property="og:url" content="http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="GNAFUIL">
+<meta property="og:description" content="类与对象一、类类：一组相关属性和行为的集合。可看作一类事物的模板，使用事物的属性特征和行为特征来描述该事物。 属性：该事物的状态信息行为：该事物能够做什么 例如：猫咪类：属性：名字、体重、年龄、颜色行为：走、跑、叫、吃饭 二、对象对象：一类事物的具体体现，对象是类的一个实例，必然具备该类事物的属性和行为 例如：一只猫属性：tom、5kg、2 years、yellow行为：优雅的走，放肆的跑、喵喵的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/PhoneParam.JPG">
+<meta property="og:image" content="http://example.com/images/PhoneReturn.JPG">
+<meta property="article:published_time" content="2021-05-16T05:39:06.000Z">
+<meta property="article:modified_time" content="2021-05-16T05:39:29.038Z">
+<meta property="article:author" content="GNAFUIL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/PhoneParam.JPG">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>类与对象</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/2021/05/16/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/2021/05/16/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&text=类与对象"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&is_video=false&description=类与对象"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=类与对象&body=Check out this article: http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&name=类与对象&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&t=类与对象"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">一、类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text">二、对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.3.</span> <span class="toc-text">三、类与对象的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.4.</span> <span class="toc-text">四、类的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">类的定义格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.2.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%A6%E7%94%9F%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">学生实例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%AD%A6%E7%94%9F%E7%B1%BB"><span class="toc-number">1.4.2.1.1.</span> <span class="toc-text">定义学生类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AD%A6%E7%94%9F%E7%B1%BB"><span class="toc-number">1.4.2.1.2.</span> <span class="toc-text">使用学生类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">手机实例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%89%8B%E6%9C%BA%E7%B1%BB"><span class="toc-number">1.4.2.2.1.</span> <span class="toc-text">定义手机类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%89%8B%E6%9C%BA%E7%B1%BB"><span class="toc-number">1.4.2.2.2.</span> <span class="toc-text">使用手机类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.4.3.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">五、进阶用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%8A%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E4%BD%9C%E4%B8%BA%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0"><span class="toc-number">1.5.1.</span> <span class="toc-text">把对象类型作为方法参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E5%86%85%E5%AD%98%E5%9B%BE"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">对应内存图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%8A%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E4%BD%9C%E4%B8%BA%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">1.5.2.</span> <span class="toc-text">把对象类型作为方法的返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E5%86%85%E5%AD%98%E5%9B%BE-1"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">对应内存图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.6.</span> <span class="toc-text">六、成员变量与局部变量的区别</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        类与对象
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">GNAFUIL</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-05-16T05:39:06.000Z" itemprop="datePublished">2021-05-16</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h1><h2 id="一、类"><a href="#一、类" class="headerlink" title="一、类"></a>一、类</h2><p><strong>类</strong>：一组相关属性和行为的集合。可看作一类事物的模板，使用事物的属性特征和行为特征来描述该事物。</p>
+<p><strong>属性</strong>：该事物的状态信息<br><strong>行为</strong>：该事物能够做什么</p>
+<p>例如：<br>猫咪类：<br>属性：名字、体重、年龄、颜色<br>行为：走、跑、叫、吃饭</p>
+<h2 id="二、对象"><a href="#二、对象" class="headerlink" title="二、对象"></a>二、对象</h2><p><strong>对象</strong>：一类事物的具体体现，对象是类的一个实例，必然具备该类事物的属性和行为</p>
+<p>例如：<br>一只猫<br>属性：tom、5kg、2 years、yellow<br>行为：优雅的走，放肆的跑、喵喵的叫、大口的吃饭</p>
+<h2 id="三、类与对象的关系"><a href="#三、类与对象的关系" class="headerlink" title="三、类与对象的关系"></a>三、类与对象的关系</h2><ul>
+<li>类是对一类事物的描述，是抽象的</li>
+<li>对象是一类事物的实例，是具体的</li>
+<li>类是对象的模板，对象是类的实体</li>
+</ul>
+<h2 id="四、类的定义"><a href="#四、类的定义" class="headerlink" title="四、类的定义"></a>四、类的定义</h2><h3 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pubilc <span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span>&#123;</span><br><span class="line">		<span class="comment">//成员变量</span></span><br><span class="line">		<span class="comment">//成员方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>定义类</strong>：定义类的实质就是定义类的成员(成员变量、成员方法)</p>
+<ul>
+<li><strong>成员变量</strong>：与定义变量几乎一致，只是位置发生了改变，定义成员变量的位置在类中，在方法外</li>
+<li><strong>成员方法</strong>：与定义方法几乎一致，只是把<code>static</code>去掉了</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="学生实例"><a href="#学生实例" class="headerlink" title="学生实例"></a>学生实例</h4><h5 id="定义学生类"><a href="#定义学生类" class="headerlink" title="定义学生类"></a>定义学生类</h5><p>定义一个类：用来模拟“学生”事物。其中就有两个组成部分<br><strong>属性</strong>（是什么）：<br>    姓名、年龄等<br><strong>行为</strong>（能做什么）：<br>    吃饭、睡觉、学习<br>对于在JAVA类当中：<br><strong>成员变量</strong>（属性）：<br>    <code>String name</code>,<code>int age</code><br><strong>成员方法</strong>（行为）：<br><strong>注意</strong>：成员方法不带有static关键字<br>    <code>public void eat()&#123;&#125;</code><br>    <code>public void sleep()&#123;&#125;</code><br>    <code>public void study()&#123;&#125;</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    	<span class="comment">//成员变量</span></span><br><span class="line">    	String name;<span class="comment">//姓名</span></span><br><span class="line">    	<span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    	<span class="comment">//成员方法</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;学习&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用学生类"><a href="#使用学生类" class="headerlink" title="使用学生类"></a>使用学生类</h5><p>通常情况下，一个类不能直接使用，需要根据类创建一个对象，才能使用</p>
+<ol>
+<li><p><strong>导包</strong>：指出需要使用的类在什么位置<br>import 包名称.类名称<br><strong>例如</strong>：import day05.Demo04.Student<br>如果和当前类属于同一包的情况，可以省略导包语句不写</p>
+</li>
+<li><p><strong>创建</strong>：<br>格式：<br>类名称 对象名 =new 类名称（）;<br><strong>例如</strong>：<code>Student stu =new Student();</code></p>
+</li>
+<li><p><strong>使用</strong>:</p>
+<ul>
+<li>两种情况：<ul>
+<li>使用成员变量：对象名.成员变量名</li>
+<li>使用成员方法：对象名.成员方法名（参数）</li>
+</ul>
+</li>
+<li>使用方法概括：用什么，就用对象名称.什么</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UseStudent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//导包</span></span><br><span class="line">        <span class="comment">//此时我需要的Student类和UseStudent在同一包下，可省略</span></span><br><span class="line">        <span class="comment">// 创建</span></span><br><span class="line">        <span class="comment">//根据Student类，创建了一个名为stu的对象</span></span><br><span class="line">        Student stu=<span class="keyword">new</span> Student();</span><br><span class="line">        <span class="comment">//使用</span></span><br><span class="line">        System.out.println(stu.name);<span class="comment">//不赋值时为null</span></span><br><span class="line">        System.out.println(stu.age);<span class="comment">//不赋值时为0</span></span><br><span class="line">        System.out.println(<span class="string">&quot;============================&quot;</span>);</span><br><span class="line">        <span class="comment">//改变对象中的成员变量</span></span><br><span class="line">        stu.name=<span class="string">&quot;小猪哈哈&quot;</span>;</span><br><span class="line">        stu.age=<span class="number">18</span>;</span><br><span class="line">        System.out.println(stu.name);</span><br><span class="line">        System.out.println(stu.age);</span><br><span class="line">        <span class="comment">//使用对象的成员方法</span></span><br><span class="line">        <span class="comment">//格式：对象名.成员方法名（）</span></span><br><span class="line">        stu.study();</span><br><span class="line">        stu.eat();</span><br><span class="line">        stu.sleep();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="手机实例"><a href="#手机实例" class="headerlink" title="手机实例"></a>手机实例</h4><h5 id="定义手机类"><a href="#定义手机类" class="headerlink" title="定义手机类"></a>定义手机类</h5><p>定义一个类，用于模拟手机事物<br><strong>属性</strong>：品牌，价格，颜色<br><strong>行为</strong>：打电话、发短信<br>则可转化为<br><strong>成员变量</strong>（属性）<br>    String brand;<br>    double price;<br>    String colour;<br><strong>成员方法</strong>（行为）<br>    public void call（String who）{}<br>    public void sendMessage(){}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    	<span class="comment">//成员变量</span></span><br><span class="line">    	String name;<span class="comment">//姓名</span></span><br><span class="line">    	<span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    	<span class="comment">//成员方法</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span><span class="params">()</span></span>&#123;</span><br><span class="line">        	System.out.println(<span class="string">&quot;学习&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用手机类"><a href="#使用手机类" class="headerlink" title="使用手机类"></a>使用手机类</h5><p>通常情况下，一个类不能直接使用，需要根据类创建一个对象，才能使用</p>
+<ol>
+<li><p><strong>导包</strong>：指出需要使用的类在什么位置<br>import 包名称.类名称<br><strong>例如</strong>：import day05.Demo04.Phone<br>如果和当前类属于同一包的情况，可以省略导包语句不写</p>
+</li>
+<li><p><strong>创建</strong>：<br>格式：<br>类名称 对象名 =new 类名称（）;<br><strong>例如</strong>：<code>Student phone =new Phone();</code></p>
+</li>
+<li><p><strong>使用</strong>:</p>
+<ul>
+<li>两种情况：<ul>
+<li>使用成员变量：对象名.成员变量名</li>
+<li>使用成员方法：对象名.成员方法名（参数）</li>
+</ul>
+</li>
+<li>使用方法概括：用什么，就用对象名称.什么</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UseStudent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//导包</span></span><br><span class="line">        <span class="comment">//此时我需要的Student类和UseStudent在同一包下，可省略</span></span><br><span class="line">        <span class="comment">// 创建</span></span><br><span class="line">        <span class="comment">//根据Phone类，创建一个名为phone的对象</span></span><br><span class="line">        <span class="comment">//格式：类名称 对象名= new 类名称</span></span><br><span class="line">        Phone phone=<span class="keyword">new</span> Phone();</span><br><span class="line">        System.out.println(phone.brand);<span class="comment">//null</span></span><br><span class="line">        System.out.println(phone.price);<span class="comment">//0.0</span></span><br><span class="line">        System.out.println(phone.colour);<span class="comment">//null</span></span><br><span class="line">        System.out.println(<span class="string">&quot;========================&quot;</span>);</span><br><span class="line">        phone.brand=<span class="string">&quot;小米&quot;</span>;</span><br><span class="line">        phone.price=<span class="number">4699</span>;</span><br><span class="line">        phone.colour=<span class="string">&quot;blue&quot;</span>;</span><br><span class="line">        System.out.println(phone.brand);<span class="comment">//小米</span></span><br><span class="line">        System.out.println(phone.price);<span class="comment">//4699.0</span></span><br><span class="line">        System.out.println(phone.colour);<span class="comment">//bule</span></span><br><span class="line">        System.out.println(<span class="string">&quot;========================&quot;</span>);</span><br><span class="line">        phone.call(<span class="string">&quot;雷军&quot;</span>);</span><br><span class="line">        phone.sendMessage();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a><strong>注意事项</strong></h3><ol>
+<li>成员变量是直接定义在类当中的，在方法外边</li>
+<li>成员方法不要写static关键字</li>
+<li>如果成员变量没有进行赋值，那么将会有一个默认值，规则和数组一样</li>
+</ol>
+<h2 id="五、进阶用法"><a href="#五、进阶用法" class="headerlink" title="五、进阶用法"></a>五、进阶用法</h2><p>两种进阶用法</p>
+<pre><code>    * 把对象类型作为方法参数
+    * 把对象类型作为方法的返回值
+</code></pre>
+<h3 id="把对象类型作为方法参数"><a href="#把对象类型作为方法参数" class="headerlink" title="把对象类型作为方法参数"></a>把对象类型作为方法参数</h3><p>当一个对象作为参数，传递到方法当中时，实际传递进去的是<strong>对象的地址值</strong></p>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Phone MI =<span class="keyword">new</span> Phone();</span><br><span class="line">    MI.brand=<span class="string">&quot;小米&quot;</span>;</span><br><span class="line">    MI.price=<span class="number">4799</span>;</span><br><span class="line">    MI.colour=<span class="string">&quot;蓝&quot;</span>;</span><br><span class="line">    method(MI);<span class="comment">//传递的参数是地址值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Phone param)</span> </span>&#123;</span><br><span class="line">    System.out.println(param.brand);</span><br><span class="line">    System.out.println(param.price);</span><br><span class="line">    System.out.println(param.colour);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="对应内存图"><a href="#对应内存图" class="headerlink" title="对应内存图"></a>对应内存图</h4><p><img src="/images/PhoneParam.JPG" alt="PhoneParam"></p>
+<h3 id="把对象类型作为方法的返回值"><a href="#把对象类型作为方法的返回值" class="headerlink" title="把对象类型作为方法的返回值"></a>把对象类型作为方法的返回值</h3><p>当使用一个对象类型作为方法的返回值时，返回值其实就是<strong>对象的地址值</strong></p>
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Phone two =getPhone();<span class="comment">//将getPhone方法中的返回值传递给two</span></span><br><span class="line">    System.out.println(two.brand);</span><br><span class="line">    System.out.println(two.price);</span><br><span class="line">    System.out.println(two.colour);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Phone <span class="title">getPhone</span> <span class="params">()</span></span>&#123;</span><br><span class="line">    Phone one =<span class="keyword">new</span> Phone();<span class="comment">//从Phone类中新建一个对象</span></span><br><span class="line">    one.brand=<span class="string">&quot;小米&quot;</span>;</span><br><span class="line">    one.price=<span class="number">4799</span>;</span><br><span class="line">    one.colour=<span class="string">&quot;蓝&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> one;<span class="comment">//将对象在堆当中的地址值作为返回值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="对应内存图-1"><a href="#对应内存图-1" class="headerlink" title="对应内存图"></a>对应内存图</h4><p><img src="/images/PhoneReturn.JPG" alt="PhoneReturn"></p>
+<p>one和two都是在传递同一个地址值</p>
+<p>即类中new出来的对象地址值,所以one和two指向的都是同一个对象，<code>two.brand</code>就是<code>one.brand</code></p>
+<h2 id="六、成员变量与局部变量的区别"><a href="#六、成员变量与局部变量的区别" class="headerlink" title="六、成员变量与局部变量的区别"></a>六、成员变量与局部变量的区别</h2><ol>
+<li><p>定义的<strong>位置</strong>不一样(重点)</p>
+<ul>
+<li>局部变量：在方法的内部</li>
+<li>成员变量：在方法的外部，直接写在类当中</li>
+</ul>
+</li>
+<li><p><strong>作用范围</strong>不一样(重点)</p>
+<ul>
+<li>局部变量：只有在方法当中才可以使用，出了方法就不能使用</li>
+<li>成员变量：整个类都可以使用</li>
+</ul>
+</li>
+<li><p><strong>默认值</strong>不一样(重点)</p>
+<ul>
+<li>局部变量：如果没有赋值，就无法使用</li>
+<li>成员变量：如果没有赋值，会有默认值，规制与数组一样</li>
+</ul>
+</li>
+<li><p>内存的<strong>位置</strong>不一样</p>
+<ul>
+<li>局部变量：位于栈内存</li>
+<li>成员变量：位于堆内存（成员变量是new出来的，所以成员变量是在堆内存）</li>
+</ul>
+</li>
+<li><p><strong>生命周期</strong>不同</p>
+<ul>
+<li>局部变量：随着方法的进栈而诞生，随着方法的出栈而消失</li>
+<li>成员变量：随着对象创建而诞生，随着对象被垃圾回收而消失<br><strong>通常情况下局部变量生命周期短一些</strong></li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VariableDifference</span> </span>&#123;    String name;    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span><span class="params">()</span> </span>&#123;        <span class="keyword">int</span> num=<span class="number">20</span>;        System.out.println(num);        System.out.println(name);    &#125;    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodB</span><span class="params">(<span class="keyword">int</span> param)</span> </span>&#123;<span class="comment">//方法的参数就是局部变量        // 为什么方法的参数在调用时不手动赋值也可以被使用        //因为参数在方法的调用时，必然会被赋值所以可以输出使用        System.out.println(param);        int age;        //错误写法                //System.out.println(age);没赋值不可用        //错误写法                //System.out.println(num);未定义不可用        System.out.println(name);    &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">一、类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text">二、对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.3.</span> <span class="toc-text">三、类与对象的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.4.</span> <span class="toc-text">四、类的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">类的定义格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.2.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%A6%E7%94%9F%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">学生实例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%AD%A6%E7%94%9F%E7%B1%BB"><span class="toc-number">1.4.2.1.1.</span> <span class="toc-text">定义学生类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AD%A6%E7%94%9F%E7%B1%BB"><span class="toc-number">1.4.2.1.2.</span> <span class="toc-text">使用学生类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">手机实例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%89%8B%E6%9C%BA%E7%B1%BB"><span class="toc-number">1.4.2.2.1.</span> <span class="toc-text">定义手机类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%89%8B%E6%9C%BA%E7%B1%BB"><span class="toc-number">1.4.2.2.2.</span> <span class="toc-text">使用手机类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.4.3.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">五、进阶用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%8A%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E4%BD%9C%E4%B8%BA%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0"><span class="toc-number">1.5.1.</span> <span class="toc-text">把对象类型作为方法参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E5%86%85%E5%AD%98%E5%9B%BE"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">对应内存图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%8A%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E4%BD%9C%E4%B8%BA%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">1.5.2.</span> <span class="toc-text">把对象类型作为方法的返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E5%86%85%E5%AD%98%E5%9B%BE-1"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">对应内存图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.6.</span> <span class="toc-text">六、成员变量与局部变量的区别</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&text=类与对象"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&is_video=false&description=类与对象"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=类与对象&body=Check out this article: http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&title=类与对象"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&name=类与对象&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/16/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/&t=类与对象"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    GNAFUIL
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
