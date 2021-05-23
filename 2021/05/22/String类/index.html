@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="2021年5月22日，从上午谣传逝去到证实为谣言再到下午的正式讣告，身为湘农学子的我，从难受到放松，再到悲伤，无时不刻被他的安危触动，即使是弥留之际还关心着田畴，愿天下人记住这位让我们“端牢饭碗”的英雄 他是一位真正的耕耘者。当他名满天下的时候，却仍然只是专注于田畴。淡薄名利，一介农夫，播撒智慧，收获富足。他毕生的梦想，就是让所有人远离饥饿。袁老一路走好！ String类java.lang.Str">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String类">
+<meta property="og:url" content="http://example.com/2021/05/22/String%E7%B1%BB/index.html">
+<meta property="og:site_name" content="GNAFUIL">
+<meta property="og:description" content="2021年5月22日，从上午谣传逝去到证实为谣言再到下午的正式讣告，身为湘农学子的我，从难受到放松，再到悲伤，无时不刻被他的安危触动，即使是弥留之际还关心着田畴，愿天下人记住这位让我们“端牢饭碗”的英雄 他是一位真正的耕耘者。当他名满天下的时候，却仍然只是专注于田畴。淡薄名利，一介农夫，播撒智慧，收获富足。他毕生的梦想，就是让所有人远离饥饿。袁老一路走好！ String类java.lang.Str">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/StringPool.JPG">
+<meta property="article:published_time" content="2021-05-22T05:07:00.000Z">
+<meta property="article:modified_time" content="2021-05-23T01:17:55.621Z">
+<meta property="article:author" content="GNAFUIL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/StringPool.JPG">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>String类</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/2021/05/21/ArrayList%E7%B1%BB/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/22/String%E7%B1%BB/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/22/String%E7%B1%BB/&text=String类"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/22/String%E7%B1%BB/&is_video=false&description=String类"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=String类&body=Check out this article: http://example.com/2021/05/22/String%E7%B1%BB/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/22/String%E7%B1%BB/&name=String类&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/22/String%E7%B1%BB/&t=String类"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#String%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">String类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">字符串的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">创建字符串的常见方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%9C%893-1%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">常见方法有3+1种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">三种构造方法:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E7%A7%8D%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">一种直接创建:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="toc-number">1.3.</span> <span class="toc-text">字符串的常量池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9B%BE"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">内存图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">字符串的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83%E7%9A%84%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.1.</span> <span class="toc-text">字符串比较的相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-boolean-equals-Object-obj"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">1. public boolean equals(Object obj)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.1.1.1.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-1"><span class="toc-number">1.4.1.1.2.</span> <span class="toc-text">注意事项:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-boolean-equalsIgnoreCase-String-str"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">2. public boolean equalsIgnoreCase(String str)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">1.4.1.2.1.</span> <span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%8E%B7%E5%8F%96%E7%9A%84%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">字符串获取的相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-int-length"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">1. public int length()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-String-concat-String-str"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">2. public String concat(String str)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-public-char-chaAt-int-index"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">3. public char chaAt(int index)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-public-int-index-String-str"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">4. public int index(String str)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%88%AA%E5%8F%96%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.3.</span> <span class="toc-text">字符串截取方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-String-substring-int-index"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">1. public String substring(int index)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-String-substring-int-begin-int-end"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">2. public String substring(int begin,int end)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-2"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E7%9A%84%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.4.</span> <span class="toc-text">字符串转换的相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-char-toCharArray"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">1. public char[] toCharArray()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-byte-getBytes"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">2. public byte[] getBytes()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-public-String-replace-CharSequence-1-oldString-CharSequence-1-newString"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">3. public String replace(CharSequence^1 oldString,CharSequence^1 newString)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.5.</span> <span class="toc-text">字符串的分割方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#public-String-split-String-regex"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">public String[] split(String regex)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-3"><span class="toc-number">1.4.5.1.1.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">1.5.</span> <span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80"><span class="toc-number">1.5.1.</span> <span class="toc-text">题目一</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#main%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.1.1.1.</span> <span class="toc-text">main方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#formArrayToString%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.1.1.2.</span> <span class="toc-text">formArrayToString方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C"><span class="toc-number">1.5.2.</span> <span class="toc-text">题目二</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        String类
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">GNAFUIL</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-05-22T05:07:00.000Z" itemprop="datePublished">2021-05-22</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>2021年5月22日，从上午谣传逝去到证实为谣言再到下午的正式讣告，身为湘农学子的我，从难受到放松，再到悲伤，无时不刻被他的安危触动，即使是弥留之际还关心着田畴，愿天下人记住这位让我们“端牢饭碗”的英雄</p>
+<p><strong>他是一位真正的耕耘者。当他名满天下的时候，却仍然只是专注于田畴。淡薄名利，一介农夫，播撒智慧，收获富足。他毕生的梦想，就是让所有人远离饥饿。</strong><br><strong>袁老一路走好！</strong></p>
+<h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><p><code>java.lang.String</code>类代表字符串<br>程序中所有双引号字符串都是<code>String</code>类型的对象</p>
+<h2 id="字符串的特点"><a href="#字符串的特点" class="headerlink" title="字符串的特点"></a>字符串的特点</h2><ol>
+<li>字符串的内容创建后不可变;字符串是常量，它的值在创建之后不能更改</li>
+<li>因为字符串不可改变，所以字符串是可以共享使用的;</li>
+<li>字符串效果上相当是<code>char[]</code>字符数组，但是底层原理是<code>byte[]</code>字节数组</li>
+</ol>
+<h2 id="创建字符串的常见方法"><a href="#创建字符串的常见方法" class="headerlink" title="创建字符串的常见方法"></a>创建字符串的常见方法</h2><h3 id="常见方法有3-1种方式"><a href="#常见方法有3-1种方式" class="headerlink" title="常见方法有3+1种方式"></a>常见方法有3+1种方式</h3><h4 id="三种构造方法"><a href="#三种构造方法" class="headerlink" title="三种构造方法:"></a>三种构造方法:</h4><p><code>public String()</code>:创建一个空白字符串，不含有任何内容<br><code>public String(char[] array)</code>:根据字符数组的内容，创建对应的字符串<br><code>public String(byte[] array)</code>:根据字节数组的内容，创建对应的字符串</p>
+<h4 id="一种直接创建"><a href="#一种直接创建" class="headerlink" title="一种直接创建:"></a>一种直接创建:</h4><p><code>String str=&quot;Hello&quot;;</code></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用空参构造</span></span><br><span class="line">String str1=<span class="keyword">new</span> String();<span class="comment">//小括号留空，代表字符串无内容</span></span><br><span class="line">System.out.println(<span class="string">&quot;第一个字符串&quot;</span>+str1);</span><br><span class="line"><span class="comment">//字符数组字符串</span></span><br><span class="line"><span class="keyword">char</span>[] chars=&#123;<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>&#125;;</span><br><span class="line">String str2=<span class="keyword">new</span> String(chars);</span><br><span class="line">System.out.println(<span class="string">&quot;第二个字符串&quot;</span>+str2);</span><br><span class="line"><span class="comment">//字节数组字符串</span></span><br><span class="line"><span class="keyword">byte</span>[] bytes=&#123;<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>,<span class="number">100</span>&#125;;</span><br><span class="line">String str3=<span class="keyword">new</span> String(bytes);</span><br><span class="line">System.out.println(<span class="string">&quot;第三个字符串&quot;</span>+str3);</span><br><span class="line"><span class="comment">//直接创建</span></span><br><span class="line">String str4=<span class="string">&quot;a,b,c,d&quot;</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;第四个字符串&quot;</span>+str4);</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>直接写上双引号就是字符串对象(没有<code>new</code>一样是字符串对象)</p>
+<h2 id="字符串的常量池"><a href="#字符串的常量池" class="headerlink" title="字符串的常量池"></a>字符串的常量池</h2><p>程序当中直接写上的双引号字符串，就在（堆当中的）字符串常量池中。<br>程序当中直接写上的双引号字符串，将会在常量池中创建一个字符串对象，而<code>new</code>的不在池当中<br>字符串对象保存的也是一个地址值，这个地址值指向的是堆当中使用<code>String</code>底层本质的<code>byte[]</code>数组<br>当常量池中已经有需要的内容时，不会再创建新的，而是直接引用</p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String str1=<span class="string">&quot;abc&quot;</span>;</span><br><span class="line">String str2=<span class="string">&quot;abc&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>[] chars=&#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>&#125;;</span><br><span class="line">String str3=<span class="keyword">new</span> String(chars);</span><br><span class="line"></span><br><span class="line">System.out.println(str1==str2);<span class="comment">//true</span></span><br><span class="line">System.out.println(str1==str3);<span class="comment">//false</span></span><br><span class="line">System.out.println(str2==str3);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<p>此Demo中<code>str1</code>已经在常量池中创建了指向代表”<code>abc</code>“的<code>byte[](97，98，99)</code>数组的字符串对象<br>当<code>str2</code>再想创建时相同含义的字符串对象时，就不再创建而是变为直接在常量池中引用字符串对象</p>
+<p>对于<code>char[] chars=&#123;&#39;a&#39;,&#39;b&#39;,&#39;c&#39;&#125;</code>,代表在栈当中创建一个<code>char[] chars</code><br>其中保存着指向对当中代表着<code>&#39;a&#39;,&#39;b&#39;,&#39;c&#39;</code>的<code>char[](&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)</code>数组的地址值</p>
+<p><code>String str3=new String(chars)</code><br>String str3代表在栈当中创建一个<code>String str3</code><br><code>new String(chars)</code><br><code>new</code>代表着在堆中创建字符串对象，就与字符串常量池无关<br><code>String(chars)</code>,指将<code>chars</code>中地址值指向的<code>char[](&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)</code>数组转化为<code>byte[](97，98，99)</code>数组</p>
+<p>所以此语句的含义是，在栈中创建一个<code>str3</code>，它保存着指向堆当中新建的但不在字符串常量池的字符串对象的地址<br>字符串对象保存着指向将<code>char[](&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)</code>数组转化为`byte<a href="97%EF%BC%8C98%EF%BC%8C99"></a>数组的地址</p>
+<h4 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h4><p><img src="/images/StringPool.JPG" alt="StringPool"></p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ol>
+<li>对于基本类型来说，== 是进行数值的比较</li>
+<li>对于引用类型来说，== 是进行地址值的比较</li>
+<li>双引号<strong>直接写</strong>的字符串<strong>在常量池当中</strong>，<strong>new的不在池当中</strong></li>
+</ol>
+<h2 id="字符串的常用方法"><a href="#字符串的常用方法" class="headerlink" title="字符串的常用方法"></a>字符串的常用方法</h2><h3 id="字符串比较的相关方法"><a href="#字符串比较的相关方法" class="headerlink" title="字符串比较的相关方法"></a>字符串比较的相关方法</h3><p><code>==</code> 是进行对象的地址比较<br>如果确实需要字符串的内容比较，可以使用两个方法</p>
+<h4 id="1-public-boolean-equals-Object-obj"><a href="#1-public-boolean-equals-Object-obj" class="headerlink" title="1. public boolean equals(Object obj)"></a>1. <code>public boolean equals(Object obj)</code></h4><p>参数可以是任何对象，只有参数是一个字符串并且内容相同的才会给一个<code>true</code>,否则返回<code>false</code></p>
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> String str1=<span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"> String str2=<span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"> <span class="keyword">char</span>[] chars=&#123;<span class="string">&#x27;H&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;o&#x27;</span>&#125;;</span><br><span class="line"> String str3=<span class="keyword">new</span> String(chars);</span><br><span class="line"></span><br><span class="line"> <span class="comment">//此时根据内容进行比较</span></span><br><span class="line"> System.out.println(str1.equals(str2));<span class="comment">//true</span></span><br><span class="line"> System.out.println(str1.equals(str3));<span class="comment">//true</span></span><br><span class="line"> System.out.println(str2.equals(str3));<span class="comment">//true</span></span><br><span class="line"> System.out.println(str3.equals(<span class="string">&quot;Hello&quot;</span>));<span class="comment">//true</span></span><br><span class="line"> System.out.println(<span class="string">&quot;Hello&quot;</span>.equals(str1));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"> String str4=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line"> System.out.println(str1.equals(str4));<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"> String str5=<span class="string">&quot;abc&quot;</span>;</span><br><span class="line"> System.out.println(<span class="string">&quot;abc&quot;</span>.equals(str5));<span class="comment">//推荐写法，true</span></span><br><span class="line"> System.out.println(str5.equals(<span class="string">&quot;abc&quot;</span>));<span class="comment">//不推荐写法，true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> 等效但是为什么会有推荐写法与不推荐写法，举例：</span></span><br><span class="line"><span class="comment"> String str6=null;</span></span><br><span class="line"><span class="comment"> System.out.println(&quot;abc&quot;.equals(str6));//推荐写法，true</span></span><br><span class="line"><span class="comment"> System.out.println(str6.equals(&quot;abc&quot;));//不推荐写法，此时出现问题！报错，空指针异常NullPointerException</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项:"></a><strong>注意事项</strong>:</h5><ol>
+<li>任何对象都能用Object进行接收。</li>
+<li><code>equals</code>方法具有对称性，也就是<code>a.equals(b)</code>与<code>b.equals(a)</code>效果一样(对象一和对象二比较和对象二与对象一比较能不一样吗。。。)</li>
+<li>如果比较双方一个常量一个变量，推荐把常量字符串写在前面<br>推荐:<code>&quot;abc&quot;.equals(str)</code><br>不推荐:<code>str.equals(&quot;abc&quot;)</code></li>
+</ol>
+<h4 id="2-public-boolean-equalsIgnoreCase-String-str"><a href="#2-public-boolean-equalsIgnoreCase-String-str" class="headerlink" title="2. public boolean equalsIgnoreCase(String str)"></a>2. <code>public boolean equalsIgnoreCase(String str)</code></h4><p>忽略大小写进行比较</p>
+<h5 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String strA=<span class="string">&quot;JAVA&quot;</span>;</span><br><span class="line">String strB=<span class="string">&quot;java&quot;</span>;</span><br><span class="line">System.out.println(strA.equals(strB));<span class="comment">//此时区分大小写，false</span></span><br><span class="line">System.out.println(strA.equalsIgnoreCase(strB));<span class="comment">//此时不区分大小写，true</span></span><br><span class="line"><span class="comment">//注意，只有英文字母区分大小写，其他的不区分大小写</span></span><br><span class="line">System.out.println(<span class="string">&quot;abc一123&quot;</span>.equalsIgnoreCase(<span class="string">&quot;abc壹123&quot;</span>));<span class="comment">//false 求求了，区分的是大小写英文字母，不是让你来搞笑的</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串获取的相关方法"><a href="#字符串获取的相关方法" class="headerlink" title="字符串获取的相关方法"></a>字符串获取的相关方法</h3><p>常见方法有</p>
+<h4 id="1-public-int-length"><a href="#1-public-int-length" class="headerlink" title="1. public int length()"></a>1. public int length()</h4><p>获取字符串当中含有的字符个数(字符串长度)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取字符串的长度</span></span><br><span class="line"><span class="keyword">int</span> length=<span class="string">&quot;sadjkhsikfhapfkhglfkjh&quot;</span>.length();</span><br><span class="line">System.out.println(<span class="string">&quot;字符串的长度是：&quot;</span>+length);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-public-String-concat-String-str"><a href="#2-public-String-concat-String-str" class="headerlink" title="2. public String concat(String str)"></a>2. public String concat(String str)</h4><p>将当前字符串和参数字符串拼接成为返回值新的字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//拼接字符串</span></span><br><span class="line">String str1=<span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">String str2=<span class="string">&quot;World&quot;</span>;</span><br><span class="line">String str3=str1.concat(str2);</span><br><span class="line">System.out.println(str1);<span class="comment">//Hello,不会改变</span></span><br><span class="line">System.out.println(str2);<span class="comment">//World,不会改变</span></span><br><span class="line">System.out.println(str3);<span class="comment">//HelloWorld,新的字符串</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-public-char-chaAt-int-index"><a href="#3-public-char-chaAt-int-index" class="headerlink" title="3. public char chaAt(int index)"></a>3. public char chaAt(int index)</h4><p>获取指定索引位置的单个字符。(索引从0开始)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取指定索引位置的单个字符</span></span><br><span class="line"> <span class="keyword">char</span> ch  =<span class="string">&quot;Hello&quot;</span>.charAt(<span class="number">1</span>);</span><br><span class="line"> System.out.println(<span class="string">&quot;1号索引位置的字符数是:&quot;</span>+ch);<span class="comment">//e</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-public-int-index-String-str"><a href="#4-public-int-index-String-str" class="headerlink" title="4. public int index(String str)"></a>4. public int index(String str)</h4><p>查找参数字符串在本字符串当中首次出现的索引位置，如果没有返回-1值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查找参数字符串在原字符串当中第一次出现的索引位置</span></span><br><span class="line">        <span class="comment">//如果没有，返回值为-1</span></span><br><span class="line">        String original=<span class="string">&quot;HelloWorld&quot;</span>;</span><br><span class="line">        <span class="keyword">int</span> indexof= original.indexOf(<span class="string">&quot;ll&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;ll第一次出现的索引位置&quot;</span>+indexof);<span class="comment">//2</span></span><br><span class="line">        System.out.println(<span class="string">&quot;================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;HelloWorld&quot;</span>.indexOf(<span class="string">&quot;abc&quot;</span>));<span class="comment">//-1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串截取方法"><a href="#字符串截取方法" class="headerlink" title="字符串截取方法"></a>字符串截取方法</h3><h4 id="1-public-String-substring-int-index"><a href="#1-public-String-substring-int-index" class="headerlink" title="1. public String substring(int index)"></a>1. <code>public String substring(int index)</code></h4><p>截取从索引地址位置一直到字符串末尾，返回新字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str1= <span class="string">&quot;HelloWorld&quot;</span>;        String str2=str1.substring(<span class="number">3</span>);        System.out.println(str1);<span class="comment">//HelloWorld        System.out.println(str2);//loWorld</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-public-String-substring-int-begin-int-end"><a href="#2-public-String-substring-int-begin-int-end" class="headerlink" title="2. public String substring(int begin,int end)"></a>2. <code>public String substring(int begin,int end)</code></h4><p>截取从begin索引地址位置一直到end索引地址结束的中间字符串，返回新字符串 [begin,end),包含左边，不包含右边</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str1= <span class="string">&quot;HelloWorld&quot;</span>;        String str3=str1.substring(<span class="number">3</span>,<span class="number">7</span>);        System.out.println(str1);<span class="comment">//HelloWorld        System.out.println(str3);//loWo</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h4><p>下面这种写法字符串的内容没有发生改变，改变的是<code>strA</code>保存指向字符串常量池的地址值<br>下面有两个字符串:<code>&quot;Hello&quot;</code>,<code>&quot;World&quot;</code><br><code>strA</code>当中的保存的是地址值<br>本来的地址值是指向Hello的，后来的地址值是指向World的<br>两字符串没有改变，改变的是<code>strA</code>保存的地址值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strA=<span class="string">&quot;Hello&quot;</span>;        System.out.println(strA);        strA=<span class="string">&quot;World&quot;</span>;        System.out.println(strA);</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串转换的相关方法"><a href="#字符串转换的相关方法" class="headerlink" title="字符串转换的相关方法"></a>字符串转换的相关方法</h3><h4 id="1-public-char-toCharArray"><a href="#1-public-char-toCharArray" class="headerlink" title="1. public char[] toCharArray()"></a>1. public char[] toCharArray()</h4><p>将当前字符串拆分成为字符串数组作为返回值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>[] chars=<span class="string">&quot;Hello&quot;</span>.toCharArray();        System.out.println(chars[<span class="number">0</span>]);<span class="comment">//H        System.out.println(chars.length);//5        System.out.println(&quot;Hello&quot;.toCharArray());</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-public-byte-getBytes"><a href="#2-public-byte-getBytes" class="headerlink" title="2. public byte[] getBytes()"></a>2. public byte[] getBytes()</h4><p>获得当前字符串底层的字节数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;abc&quot;</span>.getBytes());        <span class="keyword">byte</span>[] bytes = <span class="string">&quot;abc&quot;</span>.getBytes();        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bytes.length; i++) &#123;            System.out.println(bytes[i]);        &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-public-String-replace-CharSequence-1-oldString-CharSequence-1-newString"><a href="#3-public-String-replace-CharSequence-1-oldString-CharSequence-1-newString" class="headerlink" title="3. public String replace(CharSequence^1 oldString,CharSequence^1 newString)"></a>3. public String replace(CharSequence<a href="%60CharSequence%60%E8%A1%A8%E7%A4%BA%E5%8F%AF%E4%BB%A5%E6%8E%A5%E5%8F%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%EF%BC%8C%E6%AD%A4%E5%A4%84%E5%8F%AF%E5%BD%93%E5%81%9A%E5%AD%97%E7%AC%A6%E4%B8%B2">^1</a> oldString,CharSequence<a href="%60CharSequence%60%E8%A1%A8%E7%A4%BA%E5%8F%AF%E4%BB%A5%E6%8E%A5%E5%8F%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%EF%BC%8C%E6%AD%A4%E5%A4%84%E5%8F%AF%E5%BD%93%E5%81%9A%E5%AD%97%E7%AC%A6%E4%B8%B2">^1</a> newString)</h4><p>将所有出现的老字符串替换成新字符串，返回替换之后的结果新字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符串内容替换        String str1 = &quot;How old are you ?&quot;;        String str2 = str1.replace(&quot;o&quot;, &quot;*&quot;);        System.out.println(str1);//How old are you ?        System.out.println(str2);//H*w *ld are y*u ?        String lang1 = &quot;会不会玩啊，不会玩。滚！&quot;;        String lang2 = lang1.replace(&quot;滚&quot;, &quot;*&quot;);        System.out.println(lang2);//会不会玩啊，不会玩。*！</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串的分割方法"><a href="#字符串的分割方法" class="headerlink" title="字符串的分割方法"></a>字符串的分割方法</h3><h4 id="public-String-split-String-regex"><a href="#public-String-split-String-regex" class="headerlink" title="public String[] split(String regex)"></a>public String[] split(String regex)</h4><p>按照参数的规则，将字符串切分成若干部分</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;aaa,bbb,ccc&quot;</span>;        String[] split = str1.split(<span class="string">&quot;,&quot;</span>);        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; split.length; i++) &#123;            System.out.println(split[i]);        &#125;        String str2 = <span class="string">&quot;aaa bbb ccc ddd&quot;</span>;        String[] s = str2.split(<span class="string">&quot; &quot;</span>);        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;            System.out.println(s[i]);        &#125;        <span class="comment">//无法切分        String str3 = &quot;aaa.bbb.ccc&quot;;        int length = str3.length();        System.out.println(&quot;长度是&quot;+length);        String[] split1 = str3.split(&quot;.&quot;);        System.out.println(&quot;split1的长度是&quot;+split1.length);//长度为0，说明失败了        for (int i = 0; i &lt; split1.length; i++) &#123;            System.out.println(split1[i]);        &#125;        String[] split2 = str3.split(&quot;\\.&quot;);        System.out.println(&quot;split2的长度是&quot;+split2.length);//长度为3，说明成功了        for (int i = 0; i &lt; split2.length; i++) &#123;            System.out.println(split2[i]);        &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="注意事项-3"><a href="#注意事项-3" class="headerlink" title="注意事项"></a>注意事项</h5><p>split方法的参数其实是一个<strong>正则表达式</strong>,如果安装英文句点”<code>.</code>“进行切分，必须写”<code>\\.</code>“加上两个反斜杠</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h3><p>定义一个方法，把数组{1，2，3}按照指定格式拼接成一个字符串，格式参照如下：[word1#word2#word3]</p>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><h5 id="main方法"><a href="#main方法" class="headerlink" title="main方法"></a>main方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;        <span class="keyword">int</span> array[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;        System.out.println(formArrayToString(array));    &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="formArrayToString方法"><a href="#formArrayToString方法" class="headerlink" title="formArrayToString方法"></a>formArrayToString方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">formArrayToString</span><span class="params">(<span class="keyword">int</span> array[])</span></span>&#123;        String str=<span class="string">&quot;[&quot;</span>;        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;            <span class="keyword">if</span> (i==array.length-<span class="number">1</span>)&#123;                str+=<span class="string">&quot;word&quot;</span>+array[i]+<span class="string">&quot;]&quot;</span>;            &#125;<span class="keyword">else</span> &#123;                        str+=<span class="string">&quot;word&quot;</span>+array[i]+<span class="string">&quot;#&quot;</span>;            &#125;        &#125;        <span class="keyword">return</span> str;    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h3><p>键盘输入一个字符串，并且统计其中的各种字符出现的次数<br>种类有：大写字母、小写字母、数字、其他</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>键盘输入:Scanner<br>字符串:String str=sc.next();<br>四个种类:定义四个变量，代表四种字符出现次数<br>统计出现次数:对字符串逐字检查，统计<br>逐字:将String–&gt;char，方法toCharArray()，<br>检查,统计:遍历char[]字符数组，堆当前字符种类进行判断，并且用四个变量进行++动作<br>打印输出四个变量的出现次数</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc=<span class="keyword">new</span> Scanner(System.in);        System.out.println(<span class="string">&quot;请输入字符串&quot;</span>);        String str=sc.next();<span class="comment">//获取字符串        int countUpper=0;        int countLower=0;        int countNumber=0;        int countOther=0;        char[] chars = str.toCharArray();        for (int i = 0; i &lt; chars.length; i++) &#123;            char ch=chars[i];//当前的当个字符            if(&#x27;A&#x27;&lt;=ch &amp;&amp; ch&lt;=&#x27;Z&#x27;)&#123;                countUpper++;            &#125;else if(&#x27;a&#x27;&lt;=ch &amp;&amp; ch&lt;=&#x27;z&#x27;)&#123;                countLower++;            &#125;else if(&#x27;0&#x27;&lt;=ch &amp;&amp; ch&lt;=&#x27;9&#x27;)&#123;                countNumber++;            &#125;else&#123;                countOther++;            &#125;        &#125;        System.out.println(&quot;大写字母&quot;+countUpper);        System.out.println(&quot;小写字母&quot;+countLower);        System.out.println(&quot;数字&quot;+countNumber);        System.out.println(&quot;其他&quot;+countOther);</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#String%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">String类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">字符串的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">创建字符串的常见方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%9C%893-1%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">常见方法有3+1种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">三种构造方法:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E7%A7%8D%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">一种直接创建:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="toc-number">1.3.</span> <span class="toc-text">字符串的常量池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9B%BE"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">内存图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">字符串的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83%E7%9A%84%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.1.</span> <span class="toc-text">字符串比较的相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-boolean-equals-Object-obj"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">1. public boolean equals(Object obj)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.1.1.1.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-1"><span class="toc-number">1.4.1.1.2.</span> <span class="toc-text">注意事项:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-boolean-equalsIgnoreCase-String-str"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">2. public boolean equalsIgnoreCase(String str)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">1.4.1.2.1.</span> <span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%8E%B7%E5%8F%96%E7%9A%84%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">字符串获取的相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-int-length"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">1. public int length()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-String-concat-String-str"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">2. public String concat(String str)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-public-char-chaAt-int-index"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">3. public char chaAt(int index)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-public-int-index-String-str"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">4. public int index(String str)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%88%AA%E5%8F%96%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.3.</span> <span class="toc-text">字符串截取方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-String-substring-int-index"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">1. public String substring(int index)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-String-substring-int-begin-int-end"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">2. public String substring(int begin,int end)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-2"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E7%9A%84%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.4.</span> <span class="toc-text">字符串转换的相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-public-char-toCharArray"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">1. public char[] toCharArray()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-public-byte-getBytes"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">2. public byte[] getBytes()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-public-String-replace-CharSequence-1-oldString-CharSequence-1-newString"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">3. public String replace(CharSequence^1 oldString,CharSequence^1 newString)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.5.</span> <span class="toc-text">字符串的分割方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#public-String-split-String-regex"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">public String[] split(String regex)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-3"><span class="toc-number">1.4.5.1.1.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">1.5.</span> <span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80"><span class="toc-number">1.5.1.</span> <span class="toc-text">题目一</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#main%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.1.1.1.</span> <span class="toc-text">main方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#formArrayToString%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.1.1.2.</span> <span class="toc-text">formArrayToString方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C"><span class="toc-number">1.5.2.</span> <span class="toc-text">题目二</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/22/String%E7%B1%BB/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/22/String%E7%B1%BB/&text=String类"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/22/String%E7%B1%BB/&is_video=false&description=String类"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=String类&body=Check out this article: http://example.com/2021/05/22/String%E7%B1%BB/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/22/String%E7%B1%BB/&title=String类"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/22/String%E7%B1%BB/&name=String类&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/22/String%E7%B1%BB/&t=String类"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    GNAFUIL
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
